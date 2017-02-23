@@ -1,115 +1,234 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
+@import 'base.css';
 
+html,
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+  height: 100%;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ebebeb;
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
+.wrap header {
+  width: 100%;
+  height: 5.55rem;
+  display: flex;
+  background: url(../img/headerbg.png) no-repeat;
+  background-size: 100% 5.55rem;
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+.wrap header .logo {
+  width: 4.4rem;
+  height: 2.75rem;
+  margin: 0.45rem 0 0 1.15rem;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+.wrap header .logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -999em;
+  background: url(../img/logo.png) no-repeat;
+  background-size: 4.4rem 2.75rem;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+.wrap section {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+.wrap section .scroll {
+  position: absolute;
+  /*nav start*/
+  /*nav end*/
+  /*show start*/
+  /*show end*/
+  /*info start*/
+  /*info end*/
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.wrap section .scroll nav {
+  width: 100%;
+  height: 3.6rem;
+  border: 0.025rem solid #d3d3d3;
+  box-sizing: border-box;
+  margin-top: 0.35rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+
+.wrap section .scroll nav a:nth-child(1) {
+  background: url(../img/nav1.png) no-repeat center 0;
+  background-size: 1.875rem 2rem;
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+
+.wrap section .scroll nav a:nth-child(2) {
+  background: url(../img/nav2.png) no-repeat center 0;
+  background-size: 1.875rem 2rem;
+}
+
+.wrap section .scroll nav a:nth-child(3) {
+  background: url(../img/nav3.png) no-repeat center 0;
+  background-size: 1.875rem 2rem;
+}
+
+.wrap section .scroll nav a:nth-child(4) {
+  background: url(../img/nav4.png) no-repeat center 0;
+  background-size: 1.875rem 2rem;
+}
+
+.wrap section .scroll nav a:nth-child(5) {
+  background: url(../img/nav5.png) no-repeat center 0;
+  background-size: 1.875rem 2rem;
+}
+
+.wrap section .scroll nav a {
+  height: 2.75rem;
+  box-sizing: border-box;
+  font: 0.45rem 'Microsoft YaHei';
+  color: #333333;
+  padding-top: 2.25rem;
+}
+
+.wrap section .scroll .show {
+  margin-top: 0.35rem;
+  border: 0.025rem solid #d3d3d3;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrap section .scroll .show p {
+  height: 1.45rem;
+  width: 100%;
+  padding-left: 0.65rem;
+  font: 0.55rem/1.45rem 'Microsoft YaHei';
+  box-sizing: border-box;
+}
+
+.wrap section .scroll .show a {
+  flex: 1;
+  text-align: center;
+  box-sizing: border-box;
+  border: 0.025rem solid #d3d3d3;
+  border-bottom: none;
+  border-left: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrap section .scroll .show a img {
+  margin-top: 0.5rem;
+  height: 3.575rem;
+}
+
+.wrap section .scroll .show a span {
+  font: 0.4rem/1.1rem 'Microsoft YaHei';
+  margin-bottom: 0.5rem;
+}
+
+.wrap section .scroll .show a:nth-child(4) {
+  border-right: none;
+}
+
+.wrap section .scroll .show a:nth-child(4) img {
+  margin-top: 1rem;
+  height: 3rem;
+}
+
+.wrap section .scroll .info {
+  margin-top: 0.45rem;
+  border: 0.025rem solid #d3d3d3;
+  height: 6.7rem;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.wrap section .scroll .info .title {
+  height: 1.45rem;
+  width: 100%;
+  padding-left: 0.65rem;
+  font: 0.55rem/1.45rem 'Microsoft YaHei';
+  box-sizing: border-box;
+  border-bottom: 0.025rem solid #ebebeb;
+}
+
+.wrap section .scroll .info img {
+  width: 4.55rem;
+  height: 3.425rem;
+  margin: 0.6rem 0.45rem 0 1rem;
+}
+
+.wrap section .scroll .info .detail {
+  width: 9.05rem;
+  color: #000;
+  text-indent: 2em;
+  font-size: 0.4rem;
+  font-family: SimHei;
+  line-height: 0.6rem;
+  margin-top: 0.6rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 3.6rem;
+}
+
+.wrap footer {
+  wdith: 100%;
+  height: 2.25rem;
+  background: url(../img/footerbg.png) no-repeat;
+  background-size: 100% 2.25rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrap footer a {
+  flex: 1;
+  padding-top: 1.625rem;
+  box-sizing: border-box;
+  color: #fff;
+  font: 0.45rem 'Microsoft YaHei';
+  line-height: 100%;
+  text-align: center;
+}
+
+.wrap footer a:nth-child(1) {
+  background: url(../img/btnav1.png) no-repeat center 0.25rem;
+  background-size: 1.325rem 1.15rem;
+}
+
+.wrap footer a:nth-child(2) {
+  background: url(../img/btnav2.png) no-repeat center 0.25rem;
+  background-size: 1.325rem 1.15rem;
+}
+
+.wrap footer a:nth-child(3) {
+  background: url(../img/btnav3.png) no-repeat center 0.25rem;
+  background-size: 1.325rem 1.15rem;
+}
+
+.wrap footer a:nth-child(4) {
+  background: url(../img/btnav4.png) no-repeat center 0.25rem;
+  background-size: 1.325rem 1.15rem;
+}
+
+.wrap footer a:nth-child(5) {
+  background: url(../img/btnav5.png) no-repeat center 0.25rem;
+  background-size: 1.325rem 1.15rem;
 }

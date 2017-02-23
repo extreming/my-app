@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no, email=no">
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/honer.css">
 	<style></style>
 	<script src="js/zepto.min.js"></script>
 	<script src="js/iscroll.js"></script>
@@ -22,17 +22,26 @@
 				scrollbars:true,
 				click:true
 			});
+			var bOk=true;
+			$('.us-menu').on('click',function(){
+				if(bOk){
+					$('.scroll nav').css('height','114px');
+					bOk=false;
+				}else{
+					$('.scroll nav').css('height',0);
+					bOk=true;
+				}
+			})
 		});
 	</script>
 </head>
 <body>
-	<div class="wrap">
+	<div class="us-wrap">
 		<header>
-			<h1 class="logo">
-				<a href="javascript:;">
-					东源红logo
-				</a>
+			<h1 class="us-logo">
+				<a href="javascript:;">logo</a>
 			</h1>
+			<a class="us-menu" href="javascript:;">menu</a>
 		</header>
 		<section>
 			<div class="scroll">
@@ -43,33 +52,11 @@
 					<a href="honer.html">企业荣誉</a>
 					<a href="contact.html">联系我们</a>
 				</nav>
-
-				<!-- show start -->
-				<div class="show">
-					<p class="title">精品展示</p>
-
-					<a href="javascript:;">
-						<img src="img/show1.png" alt="图片加载失败">
-						<span>架子床</span>
-					</a>
-					<a href="javascript:;">
-						<img src="img/show2.png" alt="图片加载失败">
-						<span>衣帽架</span>
-					</a>
-					<a href="javascript:;">
-						<img src="img/show3.png" alt="图片加载失败">
-						<span>腰形茶桌</span>
-					</a>
+				<div class="us-lead">
+					<div class="us-bg"></div>
+					<img src="img/honer.png" alt="图片加载失败">
+					<a class="more" href="javascript:;">更多荣誉 + </a>
 				</div>
-				<!-- show end -->
-				<!-- company info start -->
-				<div class="info">
-					<p class="title">公司简介</p>
-					<img src="img/info.png" alt="图片加载失败">
-					<span class="detail">              浙江东阳市东源红木家具有限公司成立于2011年，是一家专门生产、经营、销售红木家具的生产型企业，位于东阳市南马镇机械工业园，占地面积10余亩，现有职工100余人。2014年，该公司在国家工商总局注册了专有商标：东源红。
-					</span>
-				</div>
-				<!-- company info end -->
 			</div>
 		</section>
 		<footer>
